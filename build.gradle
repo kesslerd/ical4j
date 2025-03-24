@@ -202,7 +202,7 @@ publishing {
     repositories {
         maven {
             name = "OSSRH"
-            url = !isReleaseVersion ? "https://oss.sonatype.org/content/repositories/snapshots/" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            url = !isReleaseVersion ? "https://artifacts.ergon.ch/artifactory/proj-axonlab-achilles-intermediates" : "https://artifacts.ergon.ch/artifactory/proj-axonlab-achilles-thirdparty"
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
