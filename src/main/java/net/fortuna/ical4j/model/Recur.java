@@ -1370,7 +1370,7 @@ public class Recur<T extends Temporal> implements Serializable {
                 // don't count candidates that occur before the seed date..
                 if (!TemporalAdapter.isBefore(lastCandidate, seed)) {
                     // candidates exclusive of periodEnd..
-                    if (TemporalAdapter.isBefore(lastCandidate, periodStart) || TemporalAdapter.isAfter(lastCandidate, periodEnd)) {
+                    if (TemporalAdapter.isBefore(lastCandidate, periodStart) || !TemporalAdapter.isBefore(lastCandidate, periodEnd)) {
                         invalidCandidates.add(lastCandidate);
                     } else if (!TemporalAdapter.isBefore(lastCandidate, periodStart) && !TemporalAdapter.isAfter(lastCandidate, periodEnd)
                             && (getUntil() == null || !TemporalAdapter.isAfter(lastCandidate, getUntil()))) {
